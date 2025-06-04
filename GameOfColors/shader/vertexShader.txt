@@ -1,0 +1,14 @@
+#version 330 core
+
+uniform mat4 proj;
+uniform mat4 matrix_OBJ;
+
+layout (location = 0) in vec3 position;
+
+out vec3 fragmentColor;
+
+void main()
+{
+    gl_Position = proj * matrix_OBJ * vec4(position, 1.0);
+    fragmentColor = colorValues;
+}
